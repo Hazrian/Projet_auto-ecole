@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="text-center">Mes informations personnelles</h2>
+      <div class="mt-5">
+        <%= @user.name.upcase %>
+        <%= @user.firstname.capitalize %><br>
+        <%= @user.email %><br>
+        <%= @user.phone_number %><br>
+        <%= @user.street_number %> <%= @user.street %><br>
+        <%= @user.zip_code %> <%= @user.city %><br>
+        <%= @user.encrypted_password %>
+      </div>
+    </div>
+  </div>
+</div>
