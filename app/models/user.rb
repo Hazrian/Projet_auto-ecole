@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   validates :name, presence: :true
   validates :firstname, presence: :true
+
+  def address
+    address = self.street_number + " " + self.street + "\n" + self.zip_code + " " + self.city
+  end
 end
