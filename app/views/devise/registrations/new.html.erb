@@ -1,0 +1,84 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="text-center">Créer un compte </h2>
+      <div class="mt-5">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="row">
+            <div class="field form-group col-md-6">
+              <%= f.label :name %>*
+              <%= f.text_field :name , autofocus: true, autocomplete: "name", class: "form-control" %>
+            </div>
+
+            <div class="field form-group col-md-6">
+              <%= f.label :firstname %>*
+              <%= f.text_field :firstname, autocomplete: "firstname",  class: "form-control"  %>
+            </div><br />
+          </div>
+
+          <div class="field form-group">
+            <%= f.label :email %>*
+            <%= f.email_field :email, autocomplete: "email",  class: "form-control"  %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :phone_number %>
+            <%= f.text_field :phone_number, autocomplete: "phone_number",  class: "form-control"  %>
+          </div>
+
+          <h3 class="mt-3 text-center"> Adresse </h3>
+          <div class="mt-3 row">
+
+            <div class="field form-group col-md-3">
+              <%= f.label :street_number %>
+              <%= f.text_field :street_number, autocomplete: "phone_number",  class: "form-control"  %>
+            </div>
+            <div class="field form-group col-md-9">
+            <%= f.label :street %>
+            <%= f.text_field :street, autocomplete: "phone_number",  class: "form-control"  %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field form-group col-md-3">
+              <%= f.label :zip_code %>
+              <%= f.text_field :zip_code, autocomplete: "phone_number",  class: "form-control"  %>
+            </div>
+            <div class="field form-group col-md-9">
+              <%= f.label :city %>
+              <%= f.text_field :city, autocomplete: "phone_number",  class: "form-control"  %>
+            </div>
+          </div>
+
+          <h3 class="mt-3 text-center"> Mot de passe </h3>
+
+          <div class="field form-group">
+            <%= f.label :password %>*
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> caractères minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password",  class: "form-control"  %>
+          </div>
+          <div class="field form-group">
+            <%= f.label :password_confirmation %>*
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "form-control"  %>
+          </div>
+
+          <div class="field form-group">
+          <small>* champs obligatoires</small>
+          </div>
+
+          <div class="actions">
+            <%= f.submit t("helpers.submit.create"),  class: "btn btn-outline-primary btn-block" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+
+    </div>
+  </div>
+</div>
