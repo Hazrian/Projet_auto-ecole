@@ -168,7 +168,7 @@ fr:
     submit:
       create: Créer un compte
       submit: Enregistrer ce(tte) %{model}
-      update: Modifier ce(tte) %{model}
+      update: Modifier mon compte
   number:
     currency:
       format:
