@@ -1,5 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  protected
+
+    def after_update_path_for(resource)
+      user_path(resource)
+    end
+    
   private
 
   def sign_up_params
@@ -10,7 +16,7 @@ class RegistrationsController < Devise::RegistrationsController
       :phone_number,
       :city, :zip_code,
       :street,
-      :street_number, 
+      :street_number,
       :password,
       :password_confirmation)
   end

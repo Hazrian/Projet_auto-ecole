@@ -71,7 +71,7 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "form-control" %>
         </div>
 
-        <div class="field  form-group">
+        <div class="field  form-group alert alert-danger">
           <%= f.label :current_password %> <i>(Mot de passe actuel nécessaire pour valider les changements)</i><br />
           <%= f.password_field :current_password, autocomplete: "current-password",  class: "form-control" %>
         </div>
@@ -87,7 +87,7 @@
        registration_path(resource_name),
        data: { confirm: "Êtes vous sur de vouloir supprimer votre compte?" },
        method: :delete,
-       class: "btn btn-outline-danger btn-block" 
+       class: "btn btn-outline-danger btn-block"
       %>
 
       <%= link_to "Retour à la page précédente", :back %>
