@@ -6,4 +6,13 @@ class User < ApplicationRecord
 
   validates :name, presence: :true
   validates :firstname, presence: :true
+
+  before_save :make_uppercase
+
+  def make_uppercase
+    self.name.upcase!
+    self.firstname.capitalize!
+  end
+
+  private :make_uppercase
 end
