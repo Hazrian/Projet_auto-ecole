@@ -1,24 +1,12 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a template user gestion website, you can :
+  * create new users with custom field like name, first name, phone number, address
+  * update user
+  * forgot password
+  * receive mail :
+⋅⋅* after create user : welcome mail
+⋅⋅* to receive reset password instruction
+⋅⋅* when password change
+Create a .env file and add keys
+* SENDGRID_LOGIN=
+* SENDGRID_PWD=
