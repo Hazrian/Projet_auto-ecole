@@ -1,2 +1,29 @@
-<h1>FormationTypes#new</h1>
-<p>Find me in app/views/formation_types/new.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="text-center">Créer un nouveau type de formation </h2>
+      <div class="mt-5">
+
+        <%= form_for FormationType.new do |f| %>
+
+          <div class="row">
+            <div class="field form-group col-md-6">
+              <%= f.label :name %>*
+              <%= f.text_field :name , autofocus: true, autocomplete: "place_number", class: "form-control" %>
+            </div>
+
+            <div class="field form-group col-md-6">
+              <%= f.label :place_number %>*
+              <%= f.text_field :place_number, autocomplete: "place_number",  class: "form-control"  %>
+            </div><br />
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Créer un nouveau type de formation",  class: "btn btn-outline-primary btn-block" %>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
