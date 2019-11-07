@@ -79,7 +79,7 @@ gem "google-cloud-storage", "~> 1.8", require: false
 gem "aws-sdk-s3", require: false
 
 # Bootstrap 4 CSS library
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'dotenv-rails'
 gem 'dotenv'
