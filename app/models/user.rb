@@ -8,6 +8,11 @@ class User < ApplicationRecord
   validates :firstname, presence: :true
 
   before_save :make_uppercase
+  after_create :welcome_send
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 
   def make_uppercase
     self.name.upcase!
