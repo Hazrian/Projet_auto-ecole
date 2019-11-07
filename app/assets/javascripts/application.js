@@ -20,3 +20,12 @@
 //= require bootstrap-sprockets
 
 //= require_tree .
+
+
+jQuery(function($) {
+
+    $("tr[data-link]").click(function() {
+        window.location = $(this).data('link');
+    });
+
+});

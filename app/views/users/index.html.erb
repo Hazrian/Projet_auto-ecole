@@ -1,2 +1,31 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="container mt-5">
+  <div class="col-md-12 ">
+    <h2 class="text-center">Mes informations personnelles</h2>
+    <div class="mt-5 d-flex justify-content-center">
+      <table class="table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th scope="col"> Nom </th>
+            <th scope="col"> Prénom </th>
+            <th scope="col"> N° de téléphone </th>
+            <th scope="col"> Email </th>
+            <th scope="col"> Adresse </th>
+          </tr>
+        </thead>
+        <tbody>
+
+        <% @users.each do |user| %>
+          <tr data-link="<%= user_path(id: user.id) %>">
+            <td><%= user.name%></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.phone_number%></td>
+            <td><%= user.email%></td>
+            <td><%= render "users/address", user: user %></td>
+          </tr>
+        <% end %>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

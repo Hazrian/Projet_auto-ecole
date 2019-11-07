@@ -1,15 +1,19 @@
 <div class="container mt-5">
   <div class="col-md-8 offset-md-2">
-    <h2 class="text-center">Mes informations personnelles</h2>
+    <% if @user == current_user %>
+      <h2 class="text-center">Mes informations personnelles</h2>
+    <% else %>
+      <h2 class="text-center">Informations personnelles de l'utilisateur</h2>
+    <% end %>
     <div class="mt-5 d-flex justify-content-center">
       <table class="col-md-8 table-striped table-hover">
         <tr>
           <td class="col-md-6">Nom : </td>
-          <td><%= @user.name.upcase%></td>
+          <td><%= @user.name%></td>
         </tr>
         <tr>
           <td class="col-md-6">Prénom : </td>
-          <td><%= @user.firstname.capitalize %></td>
+          <td><%= @user.firstname %></td>
         </tr>
         <tr>
           <td class="col-md-6"> Numéro de téléphone : </td>
@@ -25,10 +29,14 @@
         </tr>
       </table>
     </div>
-    <%= button_to "Modifier mes informations",
-    edit_user_registration_path,
-    method: :get,
-    class: "btn btn-outline-primary btn-block mt-3"
-    %>
+    <% if @user == current_user %>
+      <%= button_to "Modifier mes informations",
+      edit_user_registration_path,
+      method: :get,
+      class: "btn btn-outline-primary btn-block mt-3"
+      %>
+    <% else %>
+      
+    <% end %>
   </div>
 </div>
