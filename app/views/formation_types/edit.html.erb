@@ -1,2 +1,40 @@
-<h1>FormationTypes#edit</h1>
-<p>Find me in app/views/formation_types/edit.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="text-center">Modifier les informations du type de formation </h2>
+      <div class="mt-5">
+
+      <%= form_for @formation_type do |f| %>
+
+      <div class="row">
+        <div class="field form-group col-md-6">
+          <%= f.label :formation_type_name %>
+          <%= f.text_field :name , autofocus: true, autocomplete: "name", class: "form-control" %>
+        </div>
+
+        <div class="field form-group col-md-6">
+          <%= f.label :formation_type_place_number %>
+          <%= f.text_field :place_number, autocomplete: "place_number",  class: "form-control"  %>
+        </div><br />
+      </div>
+
+        <div class="actions">
+          <%= f.submit "Mettre à jour le type de Formation", class: "btn btn-outline-primary btn-block" %>
+        </div>
+      <% end %>
+      <hr class="m-5">
+      <h4 class="m-3 text-center">Supprimer mon compte</h4>
+
+      <%= button_to "Supprimer mon compte",
+       @formation_type,
+       data: { confirm: "Êtes vous sur de vouloir supprimer ce type de formation?" },
+       method: :delete,
+       class: "btn btn-outline-danger btn-block"
+      %>
+
+      <%= link_to "Retour à la page précédente", :back %>
+
+      </div>
+    </div>
+  </div>
+</div>

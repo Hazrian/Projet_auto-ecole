@@ -1,2 +1,25 @@
-<h1>FormationTypes#show</h1>
-<p>Find me in app/views/formation_types/show.html.erb</p>
+<div class="container mt-5">
+  <div class="col-md-8 offset-md-2">
+      <h2 class="text-center"> Formation <%= @formation_type.name %></h2>
+
+    <div class="mt-5 d-flex justify-content-center">
+      <table class="col-md-8 table-striped table-hover">
+        <tr>
+          <td class="col-md-6">Nom : </td>
+          <td><%= @formation_type.name%></td>
+        </tr>
+        <tr>
+          <td class="col-md-6">Nombre de place : </td>
+          <td><%= @formation_type.place_number %></td>
+        </tr>
+      </table>
+    </div>
+    <% if current_user.admin %>
+      <%= button_to "Modifier les informations",
+      edit_formation_type_path,
+      method: :get,
+      class: "btn btn-outline-primary btn-block mt-3"
+      %>
+    <% end %>
+  </div>
+</div>

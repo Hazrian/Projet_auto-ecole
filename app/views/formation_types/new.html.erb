@@ -4,16 +4,16 @@
       <h2 class="text-center">Créer un nouveau type de formation </h2>
       <div class="mt-5">
 
-        <%= form_for FormationType.new do |f| %>
+        <%= form_for @formation_type do |f| %>
 
           <div class="row">
             <div class="field form-group col-md-6">
-              <%= f.label :name %>*
-              <%= f.text_field :name , autofocus: true, autocomplete: "place_number", class: "form-control" %>
+              <%= f.label :formation_type_name %>
+              <%= f.text_field :name , autofocus: true, autocomplete: "name", class: "form-control" %>
             </div>
 
             <div class="field form-group col-md-6">
-              <%= f.label :place_number %>*
+              <%= f.label :formation_type_place_number %>
               <%= f.text_field :place_number, autocomplete: "place_number",  class: "form-control"  %>
             </div><br />
           </div>

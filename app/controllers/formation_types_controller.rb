@@ -7,8 +7,8 @@ class FormationTypesController < ApplicationController
 
   def create
     @formation_type = FormationType.new(
-      name: params[:formation_type_name],
-      place_number: params[:formation_type_place_number]
+      name: params[:formation_type][:name],
+      place_number: params[:formation_type][:place_number]
     )
 
     if @formation_type.save
@@ -21,16 +21,31 @@ class FormationTypesController < ApplicationController
   end
 
   def update
+    @update_formation_type = FormationType.find(params[:id])
+    if @update_formation_type.update(
+      name:         params[:formation_type][:name],
+      place_number: params[:formation_type][:place_number]
+    )
+    flash[:success] = "Le type de formation a bien été modifié !"
+    redirect_to @update_formation_type
+  else
+    flash[:error] = "Le type de formation n'a pas pu être mis à jour !"
+    redirect_to @update_formation_type
+  end
   end
 
   def edit
+    @formation_type = FormationType.find(params[:id])
   end
 
   def destroy
+    @formation_type = FormationType.find(params[:id])
+    @formation_type.destroy
+    redirect_to formation_types_path
   end
 
   def show
-    @user = FormationType.find(params['id'])
+    @formation_type = FormationType.find(params['id'])
   end
 
   def index
