@@ -11,6 +11,7 @@ class User < ApplicationRecord
   after_create :welcome_send
 
   def welcome_send
+    require 'addressable/uri'
     UserMailer.welcome_email(self).deliver_now
   end
 
