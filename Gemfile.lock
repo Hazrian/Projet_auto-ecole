@@ -323,7 +323,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  addressable (> 2.1)
   aws-sdk-s3
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.0.0)
