@@ -6,12 +6,8 @@
   <body>
     <h1>Salut <%= @user.name %> et bienvenue chez nous !</h1>
     <p>
-      Tu t'es inscrit sur <%=Addressable::URI.parse(root_url).host%> en utilisant l'e-mail suivant : <%= @user.email %>.
+      Tu t'es inscrit sur notre site en utilisant l'e-mail suivant : <%= @user.email %>.
     </p>
-    <p>
-      Pour accéder à ton espace personnel, connecte-toi en
-      <%= link_to "cliquant ici", new_user_session_url %>
-    </p>
-    <p> À très vite sur <%=Addressable::URI.parse(root_url).host%>!
+    <p> À très vite sur notre site !
   </body>
 </html>
