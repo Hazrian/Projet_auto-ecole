@@ -92,3 +92,5 @@ gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 
 # open mail in browser
 gem 'letter_opener'
+
+gem 'addressable'
