@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
-  default from: 'no-reply@monsite.fr'
+  default from: ENV["SENDER_ADDRESS"]
 
   def welcome_email(user)
 
